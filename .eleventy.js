@@ -1,13 +1,16 @@
 const eleventyAsciidoc = require("./lib/eleventy-asciidoc.js");
 
+/** @typedef {import('./lib/eleventy-asciidoc.js').ProcessorOptions} ProcessorOptions} */
+
 module.exports = {
   /**
    * Plugin config function
    *
-   * @param      {Object}  eleventy     The eleventy configuration object
+   * @param      {object}            eleventyConfig     The eleventy configuration object
+   * @param      {ProcessorOptions}  converterOptions   Options for Asciidoctor.converter()
    */
-  configFunction(eleventyConfig, userOptions) {
+  configFunction(eleventyConfig, converterOptions) {
     eleventyConfig.addTemplateFormats("adoc");
-    eleventyConfig.addExtension("adoc", eleventyAsciidoc(userOptions));
+    eleventyConfig.addExtension("adoc", eleventyAsciidoc(converterOptions));
   },
 };
