@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "eslint lib/**.js tests/**.js",
-    "test": "nyc ava --timeout=1m -v --color",
+    "test": "nyc ava -v --color",
     "prepare": "husky install"
   },
   "keywords": [
