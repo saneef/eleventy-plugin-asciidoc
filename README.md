@@ -1,6 +1,8 @@
 # eleventy-plugin-asciidoc
 
-Eleventy plugin to add support for [AsciiDoc](https://asciidoc.org/). The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) under the hood.
+Eleventy plugin to add support for [AsciiDoc](https://asciidoc.org/). You don't need to use to shortcodes. You can directly use AsciiDoc files (`.adoc`), just like Markdown (`.md`).
+
+The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) under the hood.
 
 **Requires Eleventy `1.0.0` or newer.**
 
