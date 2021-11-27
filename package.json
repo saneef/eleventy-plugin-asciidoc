@@ -1,0 +1,55 @@
+{
+  "name": "eleventy-plugin-asciidoc",
+  "version": "0.0.0",
+  "description": "Adds support for AsciiDoc to Eleventy",
+  "main": ".eleventy.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:saneef/eleventy-plugin-asciidoctor.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/**.js tests/**.js",
+    "test": "nyc ava --timeout=1m -v --color",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "responsive-images",
+    "images",
+    "eleventy",
+    "11ty",
+    "eleventy-plugin"
+  ],
+  "author": "Saneef Ansari <hello@saneef.com> (https://saneef.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "asciidoctor": "^2.2.5",
+    "debug": "^4.3.2",
+    "gray-matter": "^4.0.3",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-xo-space": "^0.30.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "nyc": "^15.1.0",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,md,json}": "prettier --write"
+  },
+  "ava": {
+    "files": [
+      "tests/**/*",
+      "!tests/utils.js"
+    ],
+    "ignoredByWatcher": [
+      "tests/output/**"
+    ]
+  }
+}

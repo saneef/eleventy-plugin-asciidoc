@@ -1,0 +1,7 @@
+.editorconfig
+.eslintcache
+.eslintrc.js
+.github/
+.husky/pre-commit
+.nyc_output
+tests
