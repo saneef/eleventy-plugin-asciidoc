@@ -1,5 +1,6 @@
 ---
 title: Hello world
+mySlug: hello-world
 ---
 
 This text is written in AsciiDoc format.

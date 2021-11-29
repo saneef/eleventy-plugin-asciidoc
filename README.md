@@ -6,6 +6,13 @@ The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) un
 
 **Requires Eleventy `1.0.0` or newer.**
 
+## Features
+
+- Supports the default [YAML front matter](https://www.11ty.dev/docs/data-frontmatter/).
+- Supports [AsciiDoc document title](https://docs.asciidoctor.org/asciidoc/latest/document/title/#title-syntax)
+- Other attributes in the AsciiDoc file are made available in `page.asciidocAttributes`.
+  - Example `:author: Jane Doe` in the `.adoc` file will be available in `page.asciidocAttrbutes.author`
+
 ## Usage
 
 ### Install
@@ -35,9 +42,8 @@ const eleventyAsciidoc = require("eleventy-plugin-asciidoc");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAsciidoc, {
-    /* Converter options */
-    showtitle: true,
-    safe: "unsafe",
+    showtitle: true /* Default value: true */,
+    safe: "unsafe" /* Default value: undefined */,
   });
 };
 ```

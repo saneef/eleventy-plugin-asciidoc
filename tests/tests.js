@@ -39,16 +39,15 @@ test("Render AsciiDoc", async (t) => {
 
 test("Render AsciiDoc with converter options", async (t) => {
   const processor = eleventyAsciidoc({
-    attributes: { showtitle: true },
+    attributes: { showtitle: false },
   });
   const compile = processor.compile();
   const result = compile({
     page: {
-      inputPath: path.join(sourcePath, "with-doc-title.adoc"),
+      inputPath: path.join(sourcePath, "with-asciidoc-attributes.adoc"),
     },
   });
-  const output = `<h1>Hello world</h1>
-<div class="paragraph">
+  const output = `<div class="paragraph">
 <p>This text is written in AsciiDoc format.</p>
 </div>`;
 
@@ -80,9 +79,28 @@ test("Apply str if it is 'function'", async (t) => {
   t.is(result, removeNewlines(input));
 });
 
-test("Get data", async (t) => {
+test("Get data from front matter", async (t) => {
   const processor = eleventyAsciidoc();
   const result = processor.getData(path.join(sourcePath, "hello.adoc"));
 
-  t.deepEqual(result, { title: "Hello world" });
+  t.is(result.title, "Hello world");
+  t.is(result.mySlug, "hello-world");
+});
+
+test("Get title from AsciiDoc document title", async (t) => {
+  const processor = eleventyAsciidoc();
+  const result = processor.getData(
+    path.join(sourcePath, "with-asciidoc-attributes.adoc")
+  );
+
+  t.is(result.title, "Hello world");
+});
+
+test("Populate data.asciidocAttributes with AsciiDoc attributes", async (t) => {
+  const processor = eleventyAsciidoc();
+  const result = processor.getData(
+    path.join(sourcePath, "with-asciidoc-attributes.adoc")
+  );
+
+  t.is(result.asciidocAttributes.author, "Jane Doe");
 });

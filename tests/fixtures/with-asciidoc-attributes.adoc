@@ -1,6 +1,4 @@
----
-title: Hello world
----
+:author: Jane Doe
 = Hello world
 
 This text is written in AsciiDoc format.
