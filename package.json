@@ -13,8 +13,8 @@
     "prepare": "husky install"
   },
   "keywords": [
-    "responsive-images",
-    "images",
+    "asciidoc",
+    "asciidoctor",
     "eleventy",
     "11ty",
     "eleventy-plugin"
