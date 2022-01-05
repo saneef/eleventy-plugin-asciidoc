@@ -4,7 +4,7 @@ Eleventy plugin to add support for [AsciiDoc](https://asciidoc.org/). You don't 
 
 The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) under the hood.
 
-**Requires Eleventy `1.0.0` or newer.**
+**Requires Eleventy 1.0.0-beta.10, 1.0.0-canary.50 or newer.**
 
 ## Features
 
