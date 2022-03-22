@@ -42,7 +42,9 @@ const eleventyAsciidoc = require("eleventy-plugin-asciidoc");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAsciidoc, {
-    showtitle: true /* Default value: true */,
+    attributes: {
+      showtitle: true /* Default value: undefined */,
+    },
     safe: "unsafe" /* Default value: undefined */,
   });
 };
