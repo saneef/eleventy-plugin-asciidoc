@@ -49,3 +49,9 @@ module.exports = function (eleventyConfig) {
   });
 };
 ```
+
+### CSS Styles
+
+The plugin does not include any CSS styles. It is up to you to style the content.
+
+The easiest way to style the content is by using CSS file from Asciidoctor.js. The CSS file is [available on cdnjs](https://cdnjs.com/libraries/asciidoctor.js).
