@@ -55,3 +55,7 @@ module.exports = function (eleventyConfig) {
 The plugin does not include any CSS styles. It is up to you to style the content.
 
 The quick way to style the content is to use the CSS file from Asciidoctor.js. The CSS file is [available on cdnjs](https://cdnjs.com/libraries/asciidoctor.js).
+
+## Enhancements
+
+- [Tutorial on adding syntax highlighting](https://saneef.com/tutorials/asciidoc-syntax-highlighting/)
