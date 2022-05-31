@@ -10,8 +10,8 @@ The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) un
 
 - Supports the default [YAML front matter](https://www.11ty.dev/docs/data-frontmatter/).
 - Supports [AsciiDoc document title](https://docs.asciidoctor.org/asciidoc/latest/document/title/#title-syntax)
-- Other attributes in the AsciiDoc files are made available through `page.asciidocAttributes`.
-  - Example `:author: Jane Doe` in the `.adoc` file will be available as `page.asciidocAttrbutes.author`
+- Other attributes in the AsciiDoc files are made available in templates through `asciidocAttributes`.
+  - Example `:author: Jane Doe` in the `.adoc` file will be available as `asciidocAttrbutes.author`
 
 ## Usage
 
