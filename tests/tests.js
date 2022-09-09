@@ -64,3 +64,12 @@ test("Populate data.asciidocAttributes with AsciiDoc attributes", async (t) => {
 
   t.is(result.asciidocAttributes.author, "Jane Doe");
 });
+
+test("Populate keywords as tags", async (t) => {
+  const processor = eleventyAsciidoc();
+  const result = processor.getData(
+    path.join(sourcePath, "with-asciidoc-attributes.adoc")
+  );
+
+  t.deepEqual(result.tags, ["keyword1", "keyword2"]);
+});

@@ -1,4 +1,5 @@
 :author: Jane Doe
 = Hello world
+:keywords: keyword1 keyword2
 
 This text is written in AsciiDoc format.
