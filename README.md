@@ -50,6 +50,10 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+##### `base_dir`
+
+The `base_dir` of [convert options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/) is relative to the document. This can be changed using above [options](#customize-with-options).
+
 ### CSS Styles
 
 The plugin does not include any CSS styles. It is up to you to style the content.
