@@ -1,0 +1,6 @@
+:author: Jane Doe
+= Test document with include
+
+This text is written in AsciiDoc format.
+
+include::text-files/sample.txt[]

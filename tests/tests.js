@@ -1,4 +1,6 @@
 // @ts-check
+/* eslint camelcase: ["error", {allow: ["base_dir"]}] */
+
 const path = require("path");
 const test = require("ava").default;
 const { promisify } = require("util");
@@ -63,4 +65,41 @@ test("Populate data.asciidocAttributes with AsciiDoc attributes", async (t) => {
   );
 
   t.is(result.asciidocAttributes.author, "Jane Doe");
+});
+
+test("Render AsciiDoc in 'unsafe' mode with 'include'", async (t) => {
+  const processor = eleventyAsciidoc({ safe: "unsafe" });
+  const compile = processor.compile(
+    null,
+    path.join(sourcePath, "with-include.adoc")
+  );
+  const result = compile();
+  const output = `<div class="paragraph">
+<p>This text is written in AsciiDoc format.</p>
+</div>
+<div class="paragraph">
+<p>This text is written in plain text.</p>
+</div>`;
+
+  t.is(result, output);
+});
+
+test("Render AsciiDoc in 'unsafe' mode with provided 'base_dir'", async (t) => {
+  const processor = eleventyAsciidoc({
+    safe: "unsafe",
+    base_dir: "./tests/fixtures/text-files/",
+  });
+  const compile = processor.compile(
+    null,
+    path.join(sourcePath, "with-base-dir.adoc")
+  );
+  const result = compile();
+  const output = `<div class="paragraph">
+<p>This text is written in AsciiDoc format.</p>
+</div>
+<div class="paragraph">
+<p>This text is written in plain text.</p>
+</div>`;
+
+  t.is(result, output);
 });
