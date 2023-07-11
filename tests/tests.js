@@ -3,8 +3,7 @@
 
 const path = require("path");
 const test = require("ava").default;
-const { promisify } = require("util");
-const rimraf = promisify(require("rimraf"));
+const { rimraf } = require("rimraf");
 
 const eleventyAsciidoc = require("../lib/eleventy-asciidoc.js");
 
@@ -31,7 +30,7 @@ test("Render AsciiDoc with converter options", async (t) => {
   });
   const compile = processor.compile(
     null,
-    path.join(sourcePath, "with-asciidoc-attributes.adoc")
+    path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
   const result = compile();
   const output = `<div class="paragraph">
@@ -52,7 +51,7 @@ test("Get data from front matter", async (t) => {
 test("Get title from AsciiDoc document title", async (t) => {
   const processor = eleventyAsciidoc();
   const result = processor.getData(
-    path.join(sourcePath, "with-asciidoc-attributes.adoc")
+    path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
 
   t.is(result.title, "Hello world");
@@ -61,7 +60,7 @@ test("Get title from AsciiDoc document title", async (t) => {
 test("Populate data.asciidocAttributes with AsciiDoc attributes", async (t) => {
   const processor = eleventyAsciidoc();
   const result = processor.getData(
-    path.join(sourcePath, "with-asciidoc-attributes.adoc")
+    path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
 
   t.is(result.asciidocAttributes.author, "Jane Doe");
@@ -71,7 +70,7 @@ test("Render AsciiDoc in 'unsafe' mode with 'include'", async (t) => {
   const processor = eleventyAsciidoc({ safe: "unsafe" });
   const compile = processor.compile(
     null,
-    path.join(sourcePath, "with-include.adoc")
+    path.join(sourcePath, "with-include.adoc"),
   );
   const result = compile();
   const output = `<div class="paragraph">
@@ -91,7 +90,7 @@ test("Render AsciiDoc in 'unsafe' mode with provided 'base_dir'", async (t) => {
   });
   const compile = processor.compile(
     null,
-    path.join(sourcePath, "with-base-dir.adoc")
+    path.join(sourcePath, "with-base-dir.adoc"),
   );
   const result = compile();
   const output = `<div class="paragraph">
