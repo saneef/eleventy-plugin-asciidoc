@@ -22,7 +22,7 @@
   "author": "Saneef Ansari <hello@saneef.com> (https://saneef.com/)",
   "license": "MIT",
   "dependencies": {
-    "asciidoctor": "^3.0.2",
+    "@asciidoctor/core": "^3.0.2",
     "debug": "^4.3.4",
     "gray-matter": "^4.0.3",
     "nunjucks": "^3.2.4"
