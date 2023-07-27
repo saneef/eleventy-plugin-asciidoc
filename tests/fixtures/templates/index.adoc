@@ -1,0 +1,4 @@
+= Test Document with source code
+
+[source,ruby]
+puts "Hello, World!"
