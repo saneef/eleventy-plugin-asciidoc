@@ -20,6 +20,12 @@ module.exports = {
       );
     }
 
+    if (converterOptions?.extension_registry !== undefined) {
+      console.log(
+        `WARN: 'extension_registry' doesn't work well with Asciidoctor.js v3+. Use 'configure_extension_registry'.`,
+      );
+    }
+
     eleventyConfig.addTemplateFormats("adoc");
     eleventyConfig.addExtension("adoc", eleventyAsciidoc(converterOptions));
   },

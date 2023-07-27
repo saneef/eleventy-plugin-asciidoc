@@ -44,7 +44,7 @@
     "rimraf": "^5.0.1"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
+    "*.js": "eslint --cache --fix --ignore-pattern \"!.eleventy.js\"",
     "*.{js,md,json}": "prettier --write"
   },
   "ava": {
