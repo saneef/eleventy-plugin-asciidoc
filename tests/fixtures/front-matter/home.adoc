@@ -1,0 +1,7 @@
+---
+layout: base.njk
+permalink: index.html
+---
+= Home
+
+This text is written in AsciiDoc format.

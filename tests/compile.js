@@ -7,7 +7,7 @@ const { rimraf } = require("rimraf");
 
 const eleventyAsciidoc = require("../lib/eleventy-asciidoc.js");
 
-const sourcePath = path.join("tests/fixtures");
+const sourcePath = path.join("tests/fixtures/compile");
 const outputBase = path.join("tests/output/");
 
 test.before("Cleanup output", async () => rimraf(outputBase));
@@ -86,7 +86,7 @@ test("Render AsciiDoc in 'unsafe' mode with 'include'", async (t) => {
 test("Render AsciiDoc in 'unsafe' mode with provided 'base_dir'", async (t) => {
   const processor = eleventyAsciidoc({
     safe: "unsafe",
-    base_dir: "./tests/fixtures/text-files/",
+    base_dir: "./tests/fixtures/compile/text-files/",
   });
   const compile = processor.compile(
     null,
