@@ -21,6 +21,9 @@
   ],
   "author": "Saneef Ansari <hello@saneef.com> (https://saneef.com/)",
   "license": "MIT",
+  "11ty": {
+    "compatibility": ">=1.0.0"
+  },
   "dependencies": {
     "@asciidoctor/core": "^3.0.2",
     "debug": "^4.3.4",
