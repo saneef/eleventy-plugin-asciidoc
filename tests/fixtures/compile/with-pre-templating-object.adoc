@@ -1,0 +1,12 @@
+---js
+{
+  title: "Hello world",
+  asciidocPreTemplateEngine: {
+    compile: (content) => (data) => content.replace('{{title}}', data.title.toUpperCase('en_US'))
+  }
+}
+---
+
+This text is written in AsciiDoc format.
+
+{{title}}

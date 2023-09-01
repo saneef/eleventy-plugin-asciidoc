@@ -1,0 +1,8 @@
+---
+title: Hello world
+asciidocPreTemplateEngine: njk
+---
+
+This text is written in AsciiDoc format.
+
+{{title}}

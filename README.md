@@ -89,6 +89,35 @@ The plugin does not include any CSS styles. It is up to you to style the content
 
 The quick way to style the content is to use the CSS file from Asciidoctor.js. The CSS file is [available on cdnjs](https://cdnjs.com/libraries/asciidoctor.js).
 
+### Pre-template rendering
+
+When the page contains a data nammed `asciidocPreTemplateEngine`, the page will be pre-rendered with this template engine before AsciiDoctor is called.
+This allows to insert _dynamic_ AsciiDoc content using Eleventy data (especially computed or global datas).
+
+This is quiet similar to [Markdown](https://www.11ty.dev/docs/languages/markdown/) pre-processing.
+
+```adoc
+---
+title: "Foo"
+asciidocPreTemplateEngine: "njk" // ← enable Nunjucks pre-templating
+tags:
+  - a
+  - b
+---
+
+## Using page data
+
+{% for tag in tags %}
+* {{tag}}
+{% endfor %}
+
+## Using global data
+
+{% for key, value in myGlobalDict %}
+{{key}}:: {{value}}
+{% endfor %}
+```
+
 ## Enhancements
 
 - [Tutorial on adding syntax highlighting](https://saneef.com/tutorials/asciidoc-syntax-highlighting/)
