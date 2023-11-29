@@ -1,6 +1,8 @@
 # eleventy-plugin-asciidoc
 
-Eleventy plugin to add support for [AsciiDoc](https://asciidoc.org/). You don't need to use to shortcodes. You can directly use AsciiDoc files (`.adoc`), just like Markdown (`.md`).
+Eleventy plugin to add support for [AsciiDoc](https://asciidoc.org/).
+You don't need to use to shortcodes.
+You can directly use AsciiDoc files (`.adoc`), just like Markdown (`.md`).
 
 The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) under the hood.
 
@@ -35,7 +37,8 @@ module.exports = function (eleventyConfig) {
 
 ### Customize with Options
 
-You can pass options to `convert()` of Asciidoctor.js as second argument in `addPlugin()`. These are the [available options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/).
+You can pass options to `convert()` of Asciidoctor.js as second argument in `addPlugin()`.
+These are the [available options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/).
 
 ```js
 const eleventyAsciidoc = require("eleventy-plugin-asciidoc");
@@ -52,7 +55,13 @@ module.exports = function (eleventyConfig) {
 
 #### `base_dir`
 
-The `base_dir` of [convert options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/) is relative to the document. This can be changed using above [options](#customize-with-options).
+The `base_dir` of [convert options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/) is relative to the document.
+This can be changed using above [options](#customize-with-options).
+
+#### `attributes.outdir`
+
+By default, [`attributes.outdir`](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) will output directory (`permalink`) of the document.
+This can be changed using above [options](#customize-with-options).
 
 #### `extension_registry` (⚠️ deprecated)
 
@@ -87,7 +96,8 @@ Refer to [Asciidoctor.js documentation](https://docs.asciidoctor.org/asciidoctor
 
 The plugin does not include any CSS styles. It is up to you to style the content.
 
-The quick way to style the content is to use the CSS file from Asciidoctor.js. The CSS file is [available on cdnjs](https://cdnjs.com/libraries/asciidoctor.js).
+The quickest way to style the content is to use the CSS file from Asciidoctor.js.
+The CSS file is [available on cdnjs](https://cdnjs.com/libraries/asciidoctor.js).
 
 ## Enhancements
 
