@@ -56,12 +56,12 @@ module.exports = function (eleventyConfig) {
 #### `base_dir`
 
 The `base_dir` of [convert options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/) is relative to the document.
-This can be changed using above [options](#customize-with-options).
+This can be changed using the above [options](#customize-with-options).
 
 #### `attributes.outdir`
 
-By default, [`attributes.outdir`](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) will output directory (`permalink`) of the document.
-This can be changed using above [options](#customize-with-options).
+By default, [`attributes.outdir`](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) will be the path to the output directory (`permalink`) of the document.
+This can be changed using the above [options](#customize-with-options).
 
 #### `extension_registry` (⚠️ deprecated)
 
