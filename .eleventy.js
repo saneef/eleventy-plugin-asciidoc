@@ -27,6 +27,8 @@ module.exports = {
     }
 
     eleventyConfig.addTemplateFormats("adoc");
+    eleventyConfig.addTemplateFormats("asciidoc");
     eleventyConfig.addExtension("adoc", eleventyAsciidoc(converterOptions));
+    eleventyConfig.addExtension("asciidoc", eleventyAsciidoc(converterOptions));
   },
 };
