@@ -6,7 +6,7 @@ You can directly use AsciiDoc files (`.adoc`), just like Markdown (`.md`).
 
 The plugin uses [Asciidoctor.js](https://docs.asciidoctor.org/asciidoctor.js) under the hood.
 
-**Requires Eleventy 1.0.0-beta.10, 1.0.0-canary.50 or newer.**
+**Requires Eleventy 2.0.0-canary.19 or newer.**
 
 ## Features
 
