@@ -26,7 +26,10 @@ module.exports = {
       );
     }
 
-    eleventyConfig.addTemplateFormats("adoc");
-    eleventyConfig.addExtension("adoc", eleventyAsciidoc(converterOptions));
+    eleventyConfig.addTemplateFormats(["adoc", "asciidoc", "ad"]);
+    eleventyConfig.addExtension(
+      ["adoc", "asciidoc", "ad"],
+      eleventyAsciidoc(converterOptions),
+    );
   },
 };
