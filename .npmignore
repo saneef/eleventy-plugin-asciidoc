@@ -5,3 +5,4 @@
 .husky/pre-commit
 .nyc_output
 tests
+*.tgz
