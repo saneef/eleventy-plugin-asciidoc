@@ -3,6 +3,7 @@
   "version": "4.0.0",
   "description": "Adds support for AsciiDoc to Eleventy",
   "main": ".eleventy.js",
+  "funding": "https://github.com/sponsors/saneef/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saneef/eleventy-plugin-asciidoc.git"
