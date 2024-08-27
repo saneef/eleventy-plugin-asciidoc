@@ -19,7 +19,7 @@ test("Page titles are populated", async (t) => {
   );
   const json = await elev.toJSON();
 
-  t.is(json.length, 2);
+  t.is(json.length, 3);
 
   const home = json.find((d) => d.inputPath.endsWith("home.adoc"));
   const homeTitle = getHtmlTitle(home.content);
@@ -40,11 +40,16 @@ test("Permalinks are mapped correctly", async (t) => {
   );
   const json = await elev.toJSON();
 
-  t.is(json.length, 2);
+  t.is(json.length, 3);
 
   const home = json.find((d) => d.inputPath.endsWith("home.adoc"));
   t.is(home.url, "/");
 
   const about = json.find((d) => d.inputPath.endsWith("about-us.adoc"));
   t.is(about.url, "/about/");
+
+  const permalinkFalse = json.find((d) =>
+    d.inputPath.endsWith("permalink-false.adoc"),
+  );
+  t.is(permalinkFalse.outputPath, false);
 });

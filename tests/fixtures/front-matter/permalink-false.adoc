@@ -1,0 +1,9 @@
+---
+layout: base.njk
+permalink: false
+---
+
+= About this page
+
+This text is never written to disk because the permalink has been (deliberately)
+set to false.
