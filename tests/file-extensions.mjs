@@ -1,5 +1,5 @@
-const test = require("ava").default;
-const Eleventy = require("@11ty/eleventy");
+import test from "ava";
+import Eleventy from "@11ty/eleventy";
 
 test("Render alternative Asciidoc file extensions, '.asciidoc' and '.ad'", async (t) => {
   const elev = new Eleventy(

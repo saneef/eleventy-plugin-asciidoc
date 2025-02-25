@@ -1,7 +1,7 @@
 /* eslint camelcase: ["error", {allow: ["base_dir"]}] */
 
-const test = require("ava").default;
-const Eleventy = require("@11ty/eleventy");
+import Eleventy from "@11ty/eleventy";
+import test from "ava";
 
 function getHtmlTitle(str) {
   const titleRegex = /<title>(?<title>.+)<\/title>/m;
