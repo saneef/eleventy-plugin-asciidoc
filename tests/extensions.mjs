@@ -1,5 +1,5 @@
-const test = require("ava").default;
-const Eleventy = require("@11ty/eleventy");
+import Eleventy from "@11ty/eleventy";
+import test from "ava";
 
 test("Render with shout extension", async (t) => {
   const elev = new Eleventy(

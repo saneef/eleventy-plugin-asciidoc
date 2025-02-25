@@ -1,7 +1,6 @@
 /* eslint camelcase: ["error", {allow: ["base_dir"]}] */
-
-const test = require("ava").default;
-const Eleventy = require("@11ty/eleventy");
+import Eleventy from "@11ty/eleventy";
+import test from "ava";
 
 test("Render with custom Asciidoc template", async (t) => {
   const elev = new Eleventy(
