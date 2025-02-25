@@ -1,0 +1,8 @@
+---
+layout: base.njk
+urlSlug: from-page-data
+permalink: "{{ urlSlug }}.html"
+---
+= Home
+
+This text is written in AsciiDoc format.
