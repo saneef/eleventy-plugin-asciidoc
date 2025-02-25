@@ -27,22 +27,22 @@
   },
   "dependencies": {
     "@asciidoctor/core": "^3.0.4",
-    "debug": "^4.3.4",
+    "debug": "^4.4.0",
     "gray-matter": "^4.0.3",
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "ava": "^6.1.1",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
+    "@11ty/eleventy": "^3.0.0",
+    "ava": "^6.2.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.1",
     "eslint-config-xo-space": "^0.35.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "nyc": "^15.1.0",
-    "prettier": "^3.2.5",
-    "rimraf": "^5.0.5"
+    "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "nyc": "^17.1.0",
+    "prettier": "^3.5.2",
+    "rimraf": "^6.0.1"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix --ignore-pattern \"!.eleventy.js\"",
