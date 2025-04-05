@@ -1,0 +1,7 @@
+:eleventy-layout: base.njk
+:eleventy-urlslug: another-index
+:eleventy-permalink: {{ urlslug }}.html
+
+= Another Page
+
+This text is written in AsciiDoc format.
