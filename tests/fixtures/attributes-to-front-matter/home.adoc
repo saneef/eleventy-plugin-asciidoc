@@ -1,0 +1,6 @@
+:eleventy-layout: base.njk
+:eleventy-permalink: index.html
+
+= Home
+
+This text is written in AsciiDoc format.
