@@ -35,6 +35,40 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+### Front Matter
+
+You can use either [Eleventy style front matter](https://www.11ty.dev/docs/data-frontmatter/#front-matter-formats) or AsciiDoc document attributes to write front matter.
+
+Any AsciiDoc document attributes that are prefixed with `eleventy-` ([configurable](#eleventyAttributesPrefix)) can be used as front matter. _The prefix, `eleventy-`, will be removed from variable names available in the templates._
+
+> [!NOTE]
+> Only document-scoped attributes or variables can be used for front matter. Attributes that are written after the document title (`= Document Title`) will not be considered for front matter.
+
+```adoc
+:eleventy-permalink: /hello-world/
+:eleventy-layout: base.njk
+
+= Hello World
+
+Hello everyone!
+```
+
+The above AsciiDoc attribute front matter is the same as YAML based front matter below:
+
+```adoc
+---
+permalink: /hello-world/
+layout: base.njk
+---
+
+= Hello World
+
+Hello everyone!
+```
+
+> [!WARNING]
+> Asciidoctor.js converts all attribute names to lower case letters. Example `:eleventy-aTitle:` will be made available as `atitle` in front matter data (also as `eleventy-atitle` in document attributes).
+
 ### Customize with Options
 
 You can pass options to `convert()` of Asciidoctor.js as second argument in `addPlugin()`.
@@ -91,6 +125,12 @@ module.exports = function (eleventyConfig) {
 ```
 
 Refer to [Asciidoctor.js documentation](https://docs.asciidoctor.org/asciidoctor.js/latest/extend/extensions/) to know more about extensions.
+
+#### `eleventyAttributesPrefix`
+
+Default value is `eleventy-`.
+
+This config can be used to change the prefix string for [AsciiDoc style front matter](#front-matter).
 
 ### CSS Styles
 
