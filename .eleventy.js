@@ -2,14 +2,14 @@
 const eleventyAsciidoc = require("./lib/eleventy-asciidoc.js");
 const pkg = require("./package.json");
 
-/** @typedef {import('./lib/eleventy-asciidoc.js').ProcessorOptions} ProcessorOptions} */
+/** @typedef {import('./lib/eleventy-asciidoc.js').EleventyAsciidocOptions} EleventyAsciidocOptions} */
 
 module.exports = {
   /**
    * Plugin config function
    *
    * @param      {object}            eleventyConfig     The eleventy configuration object
-   * @param      {ProcessorOptions}  converterOptions   Options for Asciidoctor.converter()
+   * @param      {EleventyAsciidocOptions}  converterOptions   Options for Asciidoctor.converter()
    */
   configFunction(eleventyConfig, converterOptions) {
     try {
