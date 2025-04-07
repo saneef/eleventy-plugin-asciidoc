@@ -1,5 +1,5 @@
 const test = require("ava").default;
-const { parseDocumentAttributes } = require("../lib/utils.js");
+const { parseDocumentAttributes } = require("../lib/utils/asciidoc.js");
 
 test("parseDocumentAttributes: should return object as it is", async (t) => {
   t.deepEqual(parseDocumentAttributes({ some: "value" }), { some: "value" });
