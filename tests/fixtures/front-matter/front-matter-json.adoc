@@ -1,0 +1,9 @@
+---json
+{
+  "title": "JSON Front Matter",
+  "layout": "base.njk",
+  "permalink": "front-matter-json/index.html"
+}
+---
+
+This text is written in AsciiDoc format.

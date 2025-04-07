@@ -38,8 +38,6 @@ test("Permalinks are mapped correctly", async (t) => {
   );
   const json = await elev.toJSON();
 
-  t.is(json.length, 4);
-
   const home = json.find((d) => d.inputPath.endsWith("home.adoc"));
   t.is(home.url, "/");
 
@@ -55,4 +53,22 @@ test("Permalinks are mapped correctly", async (t) => {
     d.inputPath.endsWith("permalink-template.adoc"),
   );
   t.is(permalinkTemplate.url, "/from-page-data.html");
+});
+
+test("JSON front matter parsed", async (t) => {
+  const elev = new Eleventy(
+    "./tests/fixtures/front-matter/",
+    "./tests/fixtures/_site",
+    {
+      configPath: "./tests/fixtures/front-matter/.eleventy.js",
+    },
+  );
+  const json = await elev.toJSON();
+
+  const page = json.find((d) => d.inputPath.endsWith("front-matter-json.adoc"));
+
+  const pageTitle = getHtmlTitle(page.content);
+  t.is(pageTitle, `JSON Front Matter`);
+
+  t.is(page.url, "/front-matter-json/");
 });

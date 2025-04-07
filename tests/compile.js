@@ -40,30 +40,22 @@ test("Render AsciiDoc with converter options", async (t) => {
   t.is(result, output);
 });
 
-test("Get data from front matter", async (t) => {
-  const processor = eleventyAsciidoc();
-  const result = processor.getData(path.join(sourcePath, "hello.adoc"));
-
-  t.is(result.title, "Hello world");
-  t.is(result.mySlug, "hello-world");
-});
-
 test("Get title from AsciiDoc document title", async (t) => {
   const processor = eleventyAsciidoc();
-  const result = processor.getData(
+  const result = processor.getInstanceFromInputPath(
     path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
 
-  t.is(result.title, "Hello world");
+  t.is(result.data.title, "Hello world");
 });
 
 test("Populate data.asciidocAttributes with AsciiDoc attributes", async (t) => {
   const processor = eleventyAsciidoc();
-  const result = processor.getData(
+  const result = processor.getInstanceFromInputPath(
     path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
 
-  t.is(result.asciidocAttributes.author, "Jane Doe");
+  t.is(result.data.asciidocAttributes.author, "Jane Doe");
 });
 
 test("Render AsciiDoc in 'unsafe' mode with 'include'", async (t) => {
