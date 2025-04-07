@@ -1,6 +1,4 @@
 :eleventy-layout: base.njk
-:eleventy-permalink: index.html
-
-= Home
+:eleventy-title: Hello world
 
 This text is written in AsciiDoc format.

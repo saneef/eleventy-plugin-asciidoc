@@ -1,5 +1,3 @@
-/* eslint camelcase: ["error", {allow: ["base_dir"]}] */
-
 import Eleventy from "@11ty/eleventy";
 import test from "ava";
 

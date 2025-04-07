@@ -1,6 +1,6 @@
 :eleventy-layout: base.njk
-:eleventy-urlslug: another-index
-:eleventy-permalink: {{ urlslug }}.html
+:eleventy-urlslug: another-page
+:eleventy-permalink: {{ urlslug }}/index.html
 
 = Another Page
 
