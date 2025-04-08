@@ -25,7 +25,7 @@ npm install eleventy-plugin-asciidoc
 
 ### Add to Configuration File
 
-Usually `.eleventy.js`:
+Usually `eleventy.config.js` or `.eleventy.js`:
 
 ```js
 const eleventyAsciidoc = require("eleventy-plugin-asciidoc");
