@@ -2,7 +2,7 @@
   "name": "eleventy-plugin-asciidoc",
   "version": "5.0.0-alpha.1",
   "description": "Adds support for AsciiDoc to Eleventy",
-  "main": ".eleventy.js",
+  "main": "index.js",
   "funding": "https://github.com/sponsors/saneef/",
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
     "rimraf": "^6.0.1"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix --ignore-pattern \"!.eleventy.js\"",
+    "*.{js,mjs,cjs}": "eslint --cache --fix",
     "*.{js,md,json}": "prettier --write"
   },
   "ava": {
