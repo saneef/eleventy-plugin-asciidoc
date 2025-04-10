@@ -1,14 +1,14 @@
 const test = require("ava").default;
 const { pick, pickByKeyPrefix, mapKeys } = require("../lib/utils/object.js");
 
-test("pick: should pick values based on truthy", async (t) => {
-  t.deepEqual(pick({ a: "a", b: "b", c: false }, ["a", "b"]), {
+test("pick: should pick properites based on truthy values", async (t) => {
+  t.deepEqual(pick({ a: "a", b: "b", c: false }), {
     a: "a",
     b: "b",
   });
 });
 
-test("pick: should pick values based on predicate", async (t) => {
+test("pick: should pick properites based on predicate", async (t) => {
   t.deepEqual(
     pick({ a: "a", b: "b", c: false }, (_k, v) => !v),
     {
@@ -17,11 +17,11 @@ test("pick: should pick values based on predicate", async (t) => {
   );
 });
 
-test("pick: should pick values from array of keys", async (t) => {
+test("pick: should pick properites using array of keys", async (t) => {
   t.deepEqual(pick({ a: "a", b: "b", c: "c" }, ["a", "b"]), { a: "a", b: "b" });
 });
 
-test("pickByKeyPrefix: should pick values based on key prefix", async (t) => {
+test("pickByKeyPrefix: should pick properites based on key prefix", async (t) => {
   t.deepEqual(pickByKeyPrefix({ aKey: "a", anotherKey: "b", c: "c" }, "a"), {
     aKey: "a",
     anotherKey: "b",
