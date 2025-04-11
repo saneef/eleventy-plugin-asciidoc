@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+
+== A second level heading
+
+This text is written in AsciiDoc format.
+
+== Another second level heading
+
+This text is written in AsciiDoc format.
