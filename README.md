@@ -41,8 +41,7 @@ You can use either [Eleventy style front matter](https://www.11ty.dev/docs/data-
 
 Any AsciiDoc document attributes that are prefixed with `eleventy-` ([configurable](#eleventyAttributesPrefix)) can be used as front matter. _The prefix, `eleventy-`, will be removed from variable names available in the templates._
 
-> [!NOTE]
-> Only document-scoped attributes or variables can be used for front matter. Attributes that are written after the document title (`= Document Title`) will not be considered for front matter.
+Only document-scoped attributes or variables can be used for front matter. Attributes that are written after the document title (`= Document Title`) will not be considered for front matter.
 
 ```adoc
 :eleventy-permalink: /hello-world/
@@ -68,6 +67,25 @@ Hello everyone!
 
 > [!WARNING]
 > Asciidoctor.js converts all attribute names to lower case letters. Example `:eleventy-aTitle:` will be made available as `atitle` in front matter data (also as `eleventy-atitle` in document attributes).
+
+#### Data Cascade
+
+Data specified using AsciiDoc style front matter override YAML (or front matter in other Eleventy supported formats).
+
+```adoc
+---
+layout: layout-a.njk
+---
+:eleventy-layout: layout-b.njk
+
+= Hello World
+
+Hello everyone!
+```
+
+In the above case, front matter data will have `{ layout: layout-b.njk }`.
+
+In the case of `title`, [the AsciiDoc document title](https://docs.asciidoctor.org/asciidoc/latest/document/title/) (including `title` and `doctitle` attributes) takes precedence over front matter.
 
 ### Customize with Options
 
