@@ -1,0 +1,8 @@
+---
+layout: base.njk
+title: Title from YAML Front Matter
+---
+:eleventy-title: Title from AsciiDoc style front matter
+= Document Title
+
+This text is written in AsciiDoc format.

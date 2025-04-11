@@ -1,0 +1,6 @@
+---
+layout: base.njk
+title: Title from YAML Front Matter
+---
+
+This text is written in AsciiDoc format.

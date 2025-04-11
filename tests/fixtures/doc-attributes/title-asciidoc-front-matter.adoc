@@ -1,0 +1,7 @@
+---
+layout: base.njk
+title: Title from Front Matter
+---
+:eleventy-title: Title from AsciiDoc style front matter
+
+This text is written in AsciiDoc format.

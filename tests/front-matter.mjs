@@ -1,11 +1,6 @@
 import Eleventy from "@11ty/eleventy";
 import test from "ava";
-
-function getHtmlTitle(str) {
-  const titleRegex = /<title>(?<title>.+)<\/title>/m;
-  const res = titleRegex.exec(str);
-  return res?.groups?.title;
-}
+import { getHtmlTitle } from "./utils.js";
 
 test("Page titles are populated", async (t) => {
   const elev = new Eleventy(
