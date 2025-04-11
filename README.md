@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-### Front Matter
+## Front Matter
 
 You can use either [Eleventy style front matter](https://www.11ty.dev/docs/data-frontmatter/#front-matter-formats) or AsciiDoc document attributes to write front matter.
 
@@ -68,7 +68,7 @@ Hello everyone!
 > [!WARNING]
 > Asciidoctor.js converts all attribute names to lower case letters. Example `:eleventy-aTitle:` will be made available as `atitle` in front matter data (also as `eleventy-atitle` in document attributes).
 
-#### Data Cascade
+### Data Cascade
 
 Data specified using AsciiDoc style front matter override YAML (or front matter in other Eleventy supported formats).
 
@@ -87,9 +87,36 @@ In the above case, front matter data will have `{ layout: layout-b.njk }`.
 
 In the case of `title`, [the AsciiDoc document title](https://docs.asciidoctor.org/asciidoc/latest/document/title/) (including `title` and `doctitle` attributes) takes precedence over front matter.
 
-### Customize with Options
+## Options
 
-You can pass options to `convert()` of Asciidoctor.js as second argument in `addPlugin()`.
+You can pass options as the second argument in `addPlugin()`.
+
+### Options for this plugin
+
+#### `eleventyAttributesPrefix`
+
+Default value is `eleventy-`.
+
+This config can be used to change the prefix string for [AsciiDoc style front matter](#front-matter).
+
+#### `resolveDocumentTitle`
+
+Default value is `false`.
+
+If enabled, the title will be resolved from the heading of the first section in the document. Otherwise, the title will be the Level 0 heading.
+
+```adoc
+== A second level heading
+
+This text is written in AsciiDoc format.
+```
+
+With `resolveDocumentTitle: true`, the above document will have a title (in page data). `A second level heading`.
+
+### Options for Asciidoctor.js
+
+All properties other than [the ones specific to the plugin](#options-for-this-plugin) will be passed to Asciidoctor.js.
+
 These are the [available options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/).
 
 ```js
@@ -143,12 +170,6 @@ module.exports = function (eleventyConfig) {
 ```
 
 Refer to [Asciidoctor.js documentation](https://docs.asciidoctor.org/asciidoctor.js/latest/extend/extensions/) to know more about extensions.
-
-#### `eleventyAttributesPrefix`
-
-Default value is `eleventy-`.
-
-This config can be used to change the prefix string for [AsciiDoc style front matter](#front-matter).
 
 ### CSS Styles
 
