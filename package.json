@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-asciidoc",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Adds support for AsciiDoc to Eleventy",
   "main": "index.js",
   "funding": "https://github.com/sponsors/saneef/",
