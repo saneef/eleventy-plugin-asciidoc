@@ -10,8 +10,7 @@
   },
   "scripts": {
     "lint": "eslint lib/**.js tests/**.js",
-    "test": "nyc ava -v --color",
-    "prepare": "husky install"
+    "test": "nyc ava -v --color"
   },
   "keywords": [
     "asciidoc",
@@ -38,15 +37,10 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-xo-space": "^0.35.0",
     "eslint-plugin-prettier": "^5.2.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lefthook": "^2.1.9",
     "nyc": "^17.1.0",
     "prettier": "^3.5.2",
     "rimraf": "^6.0.1"
-  },
-  "lint-staged": {
-    "*.{js,mjs,cjs}": "eslint --cache --fix",
-    "*.{js,md,json}": "prettier --write"
   },
   "ava": {
     "files": [
