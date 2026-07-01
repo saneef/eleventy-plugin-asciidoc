@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "ava": "^6.2.0",
+    "ava": "^8.0.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-xo-space": "^0.35.0",
