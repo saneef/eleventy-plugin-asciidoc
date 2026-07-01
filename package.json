@@ -25,7 +25,7 @@
     "compatibility": ">=2.0.0-canary.19"
   },
   "dependencies": {
-    "@asciidoctor/core": "^3.0.4",
+    "@asciidoctor/core": "^4.0.0",
     "debug": "^4.4.3",
     "gray-matter": "^4.0.3",
     "nunjucks": "^3.2.4"
