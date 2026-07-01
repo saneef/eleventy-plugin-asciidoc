@@ -1,11 +1,10 @@
 // @ts-check
 /* eslint camelcase: ["error", {allow: ["base_dir"]}] */
 
-const path = require("path");
-const test = require("ava").default;
-const { rimraf } = require("rimraf");
-
-const eleventyAsciidoc = require("../lib/eleventy-asciidoc.js");
+import path from "path";
+import test from "ava";
+import { rimraf } from "rimraf";
+import eleventyAsciidoc from "../lib/eleventy-asciidoc.js";
 
 const sourcePath = path.join("tests/fixtures/compile");
 const outputBase = path.join("tests/output/");
@@ -16,7 +15,7 @@ test.after.always("Cleanup output", async () => rimraf(outputBase));
 test("Render AsciiDoc", async (t) => {
   const processor = eleventyAsciidoc();
   const compile = processor.compile(null, path.join(sourcePath, "hello.adoc"));
-  const result = compile();
+  const result = await compile();
   const output = `<div class="paragraph">
 <p>This text is written in AsciiDoc format.</p>
 </div>`;
@@ -32,7 +31,7 @@ test("Render AsciiDoc with converter options", async (t) => {
     null,
     path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
-  const result = compile();
+  const result = await compile();
   const output = `<div class="paragraph">
 <p>This text is written in AsciiDoc format.</p>
 </div>`;
@@ -42,7 +41,7 @@ test("Render AsciiDoc with converter options", async (t) => {
 
 test("Get title from AsciiDoc document title", async (t) => {
   const processor = eleventyAsciidoc();
-  const result = processor.getInstanceFromInputPath(
+  const result = await processor.getInstanceFromInputPath(
     path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
 
@@ -51,7 +50,7 @@ test("Get title from AsciiDoc document title", async (t) => {
 
 test("Populate data.asciidocAttributes with AsciiDoc attributes", async (t) => {
   const processor = eleventyAsciidoc();
-  const result = processor.getInstanceFromInputPath(
+  const result = await processor.getInstanceFromInputPath(
     path.join(sourcePath, "with-asciidoc-attributes.adoc"),
   );
 
@@ -64,7 +63,7 @@ test("Render AsciiDoc in 'unsafe' mode with 'include'", async (t) => {
     null,
     path.join(sourcePath, "with-include.adoc"),
   );
-  const result = compile();
+  const result = await compile();
   const output = `<div class="paragraph">
 <p>This text is written in AsciiDoc format.</p>
 </div>
@@ -84,7 +83,7 @@ test("Render AsciiDoc in 'unsafe' mode with provided 'base_dir'", async (t) => {
     null,
     path.join(sourcePath, "with-base-dir.adoc"),
   );
-  const result = compile();
+  const result = await compile();
   const output = `<div class="paragraph">
 <p>This text is written in AsciiDoc format.</p>
 </div>

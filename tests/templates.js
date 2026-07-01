@@ -6,7 +6,7 @@ test("Render with custom Asciidoc template", async (t) => {
     "./tests/fixtures/templates/",
     "./tests/fixtures/_site",
     {
-      configPath: "./tests/fixtures/templates/.eleventy.js",
+      configPath: "./tests/fixtures/templates/eleventy.config.js",
     },
   );
   const json = await elev.toJSON();

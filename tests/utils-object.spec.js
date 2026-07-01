@@ -1,5 +1,5 @@
-const test = require("ava").default;
-const { pick, pickByKeyPrefix, mapKeys } = require("../lib/utils/object.js");
+import test from "ava";
+import { pick, pickByKeyPrefix, mapKeys } from "../lib/utils/object.js";
 
 test("pick: should pick properites based on truthy values", async (t) => {
   t.deepEqual(pick({ a: "a", b: "b", c: false }), {
