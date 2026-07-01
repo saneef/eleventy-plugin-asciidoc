@@ -142,13 +142,11 @@ This can be changed using the above [options](#customize-with-options).
 By default, [`attributes.outdir`](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) will be the path to the output directory (`permalink`) of the document.
 This can be changed using the above [options](#customize-with-options).
 
-#### `extension_registry` (⚠️ deprecated)
+#### `configure_extension_registry` ⚠️ DEPRECATED
 
-The convert option `extension_registry` **will not work** as intended from Asciidoctor.js v3.0 onwards.
-The `extension_registry` needs a newly created registry for each conversion.
-Use [the `configure_extension_registry`](#configure_extension_registry) function instead.
-
-#### `configure_extension_registry`
+> [!NOTE]
+> Recommend to use `extension_registry` part of [`convert` options](https://docs.asciidoctor.org/asciidoctor.js/latest/processor/convert-options/).
+> From [v6.1.0](https://github.com/saneef/eleventy-plugin-asciidoc/releases/tag/v6.1.0), it works as intended.
 
 The `configure_extension_registry` should be a function which accepts a `registry` (instance of `Extensions.Registry`).
 During each file conversion, the function will be called with a new `registry`.
@@ -170,6 +168,10 @@ module.exports = function (eleventyConfig) {
 ```
 
 Refer to [Asciidoctor.js documentation](https://docs.asciidoctor.org/asciidoctor.js/latest/extend/extensions/) to know more about extensions.
+
+If you pass both `extension_registry` and `configure_extension_registry`, `extension_registry` will take precedence.
+
+`configure_extension_registry` will be removed in a future release.
 
 ### CSS Styles
 

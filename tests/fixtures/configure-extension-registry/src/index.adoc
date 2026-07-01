@@ -1,0 +1,4 @@
+= Test Document for Asciidoc Extensions
+
+[shout]
+If it all works, this text should be in upper case.
