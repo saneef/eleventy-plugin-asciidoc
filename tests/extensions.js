@@ -6,7 +6,7 @@ test("Render with shout extension", async (t) => {
     "./tests/fixtures/extensions/src",
     "./tests/fixtures/extensions/_site",
     {
-      configPath: "./tests/fixtures/extensions/.eleventy.js",
+      configPath: "./tests/fixtures/extensions/eleventy.config.js",
     },
   );
   const json = await elev.toJSON();

@@ -6,7 +6,7 @@ test("Render alternative Asciidoc file extensions, '.asciidoc' and '.ad'", async
     "./tests/fixtures/file-extensions/src",
     "./tests/fixtures/file-extensions/_site",
     {
-      configPath: "./tests/fixtures/file-extensions/.eleventy.js",
+      configPath: "./tests/fixtures/file-extensions/eleventy.config.js",
     },
   );
   const json = await elev.toJSON();

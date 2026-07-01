@@ -7,7 +7,7 @@ test("Page titles are populated", async (t) => {
     "./tests/fixtures/front-matter/",
     "./tests/fixtures/_site",
     {
-      configPath: "./tests/fixtures/front-matter/.eleventy.js",
+      configPath: "./tests/fixtures/front-matter/eleventy.config.js",
     },
   );
   const json = await elev.toJSON();
@@ -26,7 +26,7 @@ test("Permalinks are mapped correctly", async (t) => {
     "./tests/fixtures/front-matter/",
     "./tests/fixtures/_site",
     {
-      configPath: "./tests/fixtures/front-matter/.eleventy.js",
+      configPath: "./tests/fixtures/front-matter/eleventy.config.js",
     },
   );
   const json = await elev.toJSON();
@@ -53,7 +53,7 @@ test("JSON front matter parsed", async (t) => {
     "./tests/fixtures/front-matter/",
     "./tests/fixtures/_site",
     {
-      configPath: "./tests/fixtures/front-matter/.eleventy.js",
+      configPath: "./tests/fixtures/front-matter/eleventy.config.js",
     },
   );
   const json = await elev.toJSON();

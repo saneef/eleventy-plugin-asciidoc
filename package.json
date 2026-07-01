@@ -3,6 +3,7 @@
   "version": "5.1.0",
   "description": "Adds support for AsciiDoc to Eleventy",
   "main": "index.js",
+  "type": "module",
   "funding": "https://github.com/sponsors/saneef/",
   "repository": {
     "type": "git",
@@ -21,9 +22,6 @@
   ],
   "author": "Saneef Ansari <hello@saneef.com> (https://saneef.com/)",
   "license": "MIT",
-  "11ty": {
-    "compatibility": ">=2.0.0-canary.19"
-  },
   "dependencies": {
     "@asciidoctor/core": "^4.0.0",
     "debug": "^4.4.3",
@@ -34,9 +32,9 @@
     "@11ty/eleventy": "^3.1.6",
     "ava": "^8.0.1",
     "eslint": "^8.56.0",
-    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-config-xo-space": "^0.35.0",
-    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-prettier": "^5.5.6",
     "lefthook": "^2.1.9",
     "prettier": "^3.9.4",
     "rimraf": "^6.1.3"

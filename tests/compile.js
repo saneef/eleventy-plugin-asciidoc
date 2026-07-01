@@ -1,11 +1,10 @@
 // @ts-check
 /* eslint camelcase: ["error", {allow: ["base_dir"]}] */
 
-const path = require("path");
-const test = require("ava").default;
-const { rimraf } = require("rimraf");
-
-const eleventyAsciidoc = require("../lib/eleventy-asciidoc.js");
+import path from "path";
+import test from "ava";
+import { rimraf } from "rimraf";
+import eleventyAsciidoc from "../lib/eleventy-asciidoc.js";
 
 const sourcePath = path.join("tests/fixtures/compile");
 const outputBase = path.join("tests/output/");

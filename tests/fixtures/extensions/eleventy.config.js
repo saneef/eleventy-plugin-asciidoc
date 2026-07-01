@@ -1,12 +1,12 @@
 /* eslint camelcase: ["error", {allow: ["configure_extension_registry"]}] */
 
-const eleventyAsciidoc = require("../../../");
-const shout = require("./shout.js");
+import eleventyAsciidoc from "../../../index.js";
+import { register } from "./shout.js";
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAsciidoc, {
     configure_extension_registry(registry) {
-      shout.register(registry);
+      register(registry);
     },
   });
-};
+}
