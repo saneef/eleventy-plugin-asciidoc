@@ -1,7 +1,8 @@
 pre-commit:
   commands:
+    # Prettier for JS is included in ESlint
     prettier:
-      glob: "*.{js,md,json}"
+      glob: "*.{md,json}"
       run: npx prettier --write {staged_files}
       stage_fixed: true
 
