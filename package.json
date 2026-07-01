@@ -10,7 +10,7 @@
   },
   "scripts": {
     "lint": "eslint lib/**.js tests/**.js",
-    "test": "nyc ava -v --color"
+    "test": "ava -v --color"
   },
   "keywords": [
     "asciidoc",
@@ -38,7 +38,6 @@
     "eslint-config-xo-space": "^0.35.0",
     "eslint-plugin-prettier": "^5.2.3",
     "lefthook": "^2.1.9",
-    "nyc": "^17.1.0",
     "prettier": "^3.5.2",
     "rimraf": "^6.0.1"
   },
