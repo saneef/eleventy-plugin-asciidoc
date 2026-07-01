@@ -10,9 +10,10 @@ import eleventyAsciidoc from "./lib/eleventy-asciidoc.js";
  * @param      {EleventyAsciidocOptions}  converterOptions   Options for Asciidoctor.converter()
  */
 export default function config(eleventyConfig, converterOptions) {
-  if (converterOptions?.extension_registry !== undefined) {
+  if (converterOptions?.configure_extension_registry !== undefined) {
     console.log(
-      `WARN: 'extension_registry' doesn't work well with Asciidoctor.js v3+. Use 'configure_extension_registry'.`,
+      `[DEPRECATED]: 'configure_extension_registry' is deprecated will be removed in a future release.
+From eleventy-plugin-asciidoc v6.1.0 (with Asciidoctor.js 4.0), the native 'extension_registry' works as intended.`,
     );
   }
 
