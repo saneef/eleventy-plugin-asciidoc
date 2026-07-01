@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-asciidoc",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "Adds support for AsciiDoc to Eleventy",
   "main": "index.js",
   "type": "module",
