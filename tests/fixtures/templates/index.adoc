@@ -1,4 +1,5 @@
 = Test Document with source code
 
+.A Ruby code snippet
 [source,ruby]
 puts "Hello, World!"

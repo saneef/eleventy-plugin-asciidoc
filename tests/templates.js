@@ -14,6 +14,8 @@ test("Render with custom Asciidoc template", async (t) => {
   t.is(json.length, 1);
   t.is(
     json[0].content.trim(),
-    `<pre class="code ruby">puts "Hello, World!"</pre>`,
+    `<!-- Processed by template: listing, source -->
+<h2 class="listingblock-title">A Ruby code snippet</h2>
+<pre class="code ruby">puts "Hello, World!"</pre>`,
   );
 });

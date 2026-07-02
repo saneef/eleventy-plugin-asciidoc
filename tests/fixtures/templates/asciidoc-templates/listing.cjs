@@ -4,7 +4,9 @@ module.exports = ({ node }) => {
   const style = node.getStyle();
   const content = node.getSource();
 
+  let comment = `<!-- Processed by template: listing -->`;
   let titleEl = "";
+
   if (title) {
     titleEl = `<h${level} class="listingblock-title">${title}</h${level}>`;
   }
@@ -13,9 +15,10 @@ module.exports = ({ node }) => {
     const lang = node.getAttribute("language");
 
     if (lang && lang !== "text") {
-      return `${titleEl}\n<pre class="code ${lang}">${content}</pre>`;
+      comment = `<!-- Processed by template: listing, source -->`;
+      return `${comment}\n${titleEl}\n<pre class="code ${lang}">${content}</pre>`;
     }
   }
 
-  return `${titleEl}\n<pre>${content}</pre>`;
+  return `${comment}\n${titleEl}\n<pre>${content}</pre>`;
 };
