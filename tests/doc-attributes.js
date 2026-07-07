@@ -96,7 +96,7 @@ test("Use title from AsciiDoc style front matter", async (t) => {
   t.is(pageTitle, `Title from AsciiDoc style front matter`);
 });
 
-test("Don't reslove document title", async (t) => {
+test("Don't resolve document title", async (t) => {
   const elev = new Eleventy(
     "./tests/fixtures/doc-attributes/",
     "./tests/fixtures/_site",
@@ -114,7 +114,7 @@ test("Don't reslove document title", async (t) => {
   t.is(pageTitle, undefined);
 });
 
-test("Reslove document title", async (t) => {
+test("Resolve document title", async (t) => {
   const elev = new Eleventy(
     "./tests/fixtures/doc-attributes/",
     "./tests/fixtures/_site",
