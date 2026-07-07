@@ -1,8 +1,9 @@
+.gitattributes
 .editorconfig
 .eslintcache
-.eslintrc.js
+.eslintrc.cjs
 .github/
-.husky/pre-commit
+lefthook.yml
 .nyc_output
 tests
 *.tgz
