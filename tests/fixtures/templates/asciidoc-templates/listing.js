@@ -1,4 +1,4 @@
-module.exports = ({ node }) => {
+export default function ({ node }) {
   const level = node.getLevel() + 2;
   const title = node.getTitle();
   const style = node.getStyle();
@@ -21,4 +21,4 @@ module.exports = ({ node }) => {
   }
 
   return `${comment}\n${titleEl}\n<pre>${content}</pre>`;
-};
+}
